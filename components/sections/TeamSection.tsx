@@ -11,6 +11,8 @@ const team = [
     experience: "25+ years",
     education: "BDS, University of Sydney",
     bio: "Specialized in creating beautiful smiles with a gentle approach to patient care.",
+    avatar: "👩‍⚕️",
+    image: "/images/team-photo.jpg",
   },
   {
     name: "Dr. Michael Wong",
@@ -19,6 +21,8 @@ const team = [
     experience: "15+ years",
     education: "BDS, MDent (Ortho)",
     bio: "Expert in Invisalign and modern orthodontic treatments for all ages.",
+    avatar: "👨‍⚕️",
+    image: "/images/team-photo.jpg",
   },
   {
     name: "Dr. Lisa Zhang",
@@ -27,6 +31,8 @@ const team = [
     experience: "12+ years",
     education: "BDS, DClinDent (Perio)",
     bio: "Pioneer in laser dentistry with advanced pain management techniques.",
+    avatar: "👩‍⚕️",
+    image: "/images/team-photo.jpg",
   },
 ];
 
@@ -70,8 +76,19 @@ export function TeamSection() {
               className="group bg-gradient-to-br from-gray-50 to-blue-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
             >
               {/* Avatar */}
-              <div className="relative h-64 bg-gradient-to-br from-blue-400 to-purple-400 flex items-center justify-center">
-                <div className="text-8xl">👨‍⚕️</div>
+              <div className="relative h-64 bg-gradient-to-br from-teal-400 to-cyan-400 overflow-hidden">
+                <img 
+                  src={member.image} 
+                  alt={member.name}
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    e.currentTarget.style.display = 'none';
+                    const fallback = document.createElement('div');
+                    fallback.className = 'w-full h-full flex items-center justify-center text-8xl';
+                    fallback.textContent = member.avatar;
+                    e.currentTarget.parentElement?.appendChild(fallback);
+                  }}
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
               </div>
 
@@ -86,7 +103,7 @@ export function TeamSection() {
 
                 <div className="space-y-2 text-sm">
                   <div className="flex items-start space-x-2">
-                    <Award className="w-4 h-4 text-blue-600 mt-1 flex-shrink-0" />
+                    <Award className="w-4 h-4 text-teal-600 mt-1 flex-shrink-0" />
                     <div>
                       <div className="font-medium text-gray-900">{member.specialization}</div>
                       <div className="text-gray-600">{member.experience}</div>
@@ -94,7 +111,7 @@ export function TeamSection() {
                   </div>
 
                   <div className="flex items-center space-x-2">
-                    <GraduationCap className="w-4 h-4 text-blue-600 flex-shrink-0" />
+                    <GraduationCap className="w-4 h-4 text-teal-600 flex-shrink-0" />
                     <span className="text-gray-600">{member.education}</span>
                   </div>
                 </div>
@@ -103,7 +120,7 @@ export function TeamSection() {
                   {member.bio}
                 </p>
 
-                <button className="w-full flex items-center justify-center space-x-2 px-4 py-2 bg-white border-2 border-gray-200 rounded-lg hover:border-blue-600 hover:text-blue-600 transition-colors group">
+                <button className="w-full flex items-center justify-center space-x-2 px-4 py-2 bg-white border-2 border-gray-200 rounded-lg hover:border-teal-600 hover:text-teal-600 transition-colors group">
                   <Linkedin className="w-4 h-4" />
                   <span className="text-sm font-medium">View Profile</span>
                 </button>

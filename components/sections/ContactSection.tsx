@@ -227,9 +227,16 @@ export function ContactSection() {
 
             {/* Map Embed */}
             <div className="bg-white rounded-2xl p-2 shadow-lg overflow-hidden">
-              <div className="aspect-video bg-gray-200 rounded-lg flex items-center justify-center">
-                <MapPin className="w-12 h-12 text-gray-400" />
-              </div>
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3315.2956668445635!2d151.09376331521062!3d-33.86867098065216!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12bb0f1d2c4c83%3A0x5017d681632bcc0!2s10%20Coronation%20Parade%2C%20Enfield%20NSW%202136!5e0!3m2!1sen!2sau!4v1635000000000!5m2!1sen!2sau"
+                width="100%"
+                height="300"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="rounded-lg"
+              ></iframe>
             </div>
           </motion.div>
         </div>
