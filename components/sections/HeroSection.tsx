@@ -59,17 +59,17 @@ export function HeroSection() {
                 href="#booking"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="group px-8 py-4 bg-black text-white rounded-full font-medium flex items-center space-x-2 hover:bg-gray-900 transition-colors"
+                className="group px-8 py-4 bg-black text-white rounded-full font-medium flex items-center space-x-2 hover:bg-gray-900 transition-all glow-hover overflow-hidden"
               >
                 <span>Book appointment</span>
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
               </motion.a>
 
               <motion.a
                 href="tel:+61297474777"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="px-8 py-4 bg-white text-gray-900 rounded-full font-medium border border-gray-200 hover:border-gray-300 transition-colors flex items-center space-x-2"
+                className="px-8 py-4 bg-white text-gray-900 rounded-full font-medium border border-gray-200 hover:border-black transition-all flex items-center space-x-2 smooth-hover"
               >
                 <Phone className="w-4 h-4" />
                 <span>(02) 9747 4777</span>
@@ -80,51 +80,71 @@ export function HeroSection() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6 }}
-              className="grid grid-cols-3 gap-6 pt-8 max-w-lg"
+              transition={{ delay: 0.6, duration: 0.7 }}
+              className="grid grid-cols-3 gap-6 sm:gap-8 pt-8 max-w-lg"
             >
-              <div>
-                <div className="text-3xl font-bold text-gray-900">5000+</div>
-                <div className="text-sm text-gray-600">Happy patients</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-gray-900">30+</div>
-                <div className="text-sm text-gray-600">Years experience</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-gray-900">4.9</div>
-                <div className="text-sm text-gray-600">Rating</div>
-              </div>
+              <motion.div
+                whileHover={{ y: -4 }}
+                transition={{ duration: 0.3 }}
+                className="cursor-default"
+              >
+                <div className="text-3xl sm:text-4xl font-bold text-gray-900">5000+</div>
+                <div className="text-xs sm:text-sm text-gray-600 mt-1">Happy patients</div>
+              </motion.div>
+              <motion.div
+                whileHover={{ y: -4 }}
+                transition={{ duration: 0.3 }}
+                className="cursor-default"
+              >
+                <div className="text-3xl sm:text-4xl font-bold text-gray-900">30+</div>
+                <div className="text-xs sm:text-sm text-gray-600 mt-1">Years experience</div>
+              </motion.div>
+              <motion.div
+                whileHover={{ y: -4 }}
+                transition={{ duration: 0.3 }}
+                className="cursor-default"
+              >
+                <div className="text-3xl sm:text-4xl font-bold text-gray-900">4.9</div>
+                <div className="text-xs sm:text-sm text-gray-600 mt-1">Rating</div>
+              </motion.div>
             </motion.div>
           </motion.div>
 
           {/* Right Column - Large Image */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
+            initial={{ opacity: 0, scale: 0.96 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{ duration: 1, delay: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
             className="lg:col-span-6 relative"
           >
-            <div className="relative h-[500px] sm:h-[600px] lg:h-[700px] rounded-2xl overflow-hidden">
-              <img 
+            <div className="relative h-[500px] sm:h-[600px] lg:h-[700px] rounded-2xl sm:rounded-3xl overflow-hidden group">
+              <motion.img 
                 src="/images/team-photo-full.jpg" 
                 alt="Enfield Medical and Dental Team" 
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out"
+                initial={{ scale: 1.1 }}
+                animate={{ scale: 1 }}
+                transition={{ duration: 1.2 }}
               />
               {/* Overlay badge */}
-              <div className="absolute bottom-6 left-6 bg-white/95 backdrop-blur-sm px-6 py-4 rounded-xl shadow-lg">
-                <div className="flex items-center space-x-4">
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.8, duration: 0.6 }}
+                className="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 glass px-4 sm:px-6 py-3 sm:py-4 rounded-xl shadow-2xl"
+              >
+                <div className="flex items-center space-x-3 sm:space-x-4">
                   <div className="flex -space-x-2">
-                    <div className="w-10 h-10 rounded-full bg-teal-500 border-2 border-white flex items-center justify-center text-white text-sm font-bold">👨‍⚕️</div>
-                    <div className="w-10 h-10 rounded-full bg-cyan-500 border-2 border-white flex items-center justify-center text-white text-sm font-bold">👩‍⚕️</div>
-                    <div className="w-10 h-10 rounded-full bg-blue-500 border-2 border-white flex items-center justify-center text-white text-sm font-bold">👨‍⚕️</div>
+                    <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-teal-500 border-2 border-white flex items-center justify-center text-white text-xs sm:text-sm font-bold">👨‍⚕️</div>
+                    <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-cyan-500 border-2 border-white flex items-center justify-center text-white text-xs sm:text-sm font-bold">👩‍⚕️</div>
+                    <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-blue-500 border-2 border-white flex items-center justify-center text-white text-xs sm:text-sm font-bold">👨‍⚕️</div>
                   </div>
                   <div>
-                    <div className="text-sm font-bold text-gray-900">Expert team</div>
-                    <div className="text-xs text-gray-600">Certified professionals</div>
+                    <div className="text-xs sm:text-sm font-bold text-gray-900">Expert team</div>
+                    <div className="text-[10px] sm:text-xs text-gray-600">Certified professionals</div>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             </div>
           </motion.div>
         </div>

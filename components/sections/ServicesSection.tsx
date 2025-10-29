@@ -44,59 +44,67 @@ const services = [
 
 export function ServicesSection() {
   return (
-    <section id="services" className="py-24 bg-white">
+    <section id="services" className="py-20 sm:py-32 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
+          className="mb-16 sm:mb-20"
         >
-          <motion.span
-            initial={{ opacity: 0, scale: 0.5 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            className="inline-block px-4 py-2 bg-blue-100 text-blue-600 rounded-full text-sm font-semibold mb-4"
-          >
-            Our Services
-          </motion.span>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Comprehensive Dental Care
+          <div className="flex items-center space-x-2 mb-6">
+            <div className="w-1 h-8 bg-black"></div>
+            <span className="text-xs font-medium tracking-widest uppercase text-gray-600">
+              Services
+            </span>
+          </div>
+          <h2 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-[0.95] tracking-tight">
+            Premium dental
+            <br />
+            <span className="text-gray-400">care services</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            From routine check-ups to advanced treatments, we offer a full range of dental services using the latest technology
+          <p className="text-lg sm:text-xl text-gray-600 max-w-2xl">
+            From routine check-ups to advanced treatments, experience excellence in every visit
           </p>
         </motion.div>
 
         {/* Services Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {services.map((service, index) => (
             <motion.div
               key={service.title}
-              initial={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ y: -10, scale: 1.02 }}
-              className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 overflow-hidden"
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ 
+                duration: 0.6, 
+                delay: index * 0.1,
+                ease: [0.25, 0.46, 0.45, 0.94]
+              }}
+              className="group relative bg-white rounded-2xl p-6 sm:p-8 border border-gray-100 hover:border-gray-200 card-hover cursor-pointer"
             >
-              {/* Decorative corner */}
-              <div className="absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-br from-gray-50 to-transparent rounded-full opacity-50"></div>
-              
               {/* Icon */}
-              <div className={`inline-flex p-4 rounded-2xl bg-gradient-to-r ${service.gradient} mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 relative z-10`}>
-                <service.icon className="w-8 h-8 text-white" />
+              <div className={`inline-flex p-3 sm:p-4 rounded-xl bg-gradient-to-r ${service.gradient} mb-4 sm:mb-6 scale-hover`}>
+                <service.icon className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
               </div>
 
               {/* Content */}
-              <h3 className="text-xl font-bold text-gray-900 mb-3">
+              <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3 group-hover:text-black transition-colors">
                 {service.title}
               </h3>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
                 {service.description}
               </p>
+              
+              {/* Hover indicator */}
+              <div className="mt-4 sm:mt-6 flex items-center text-sm font-medium text-gray-400 group-hover:text-gray-900 transition-colors">
+                <span>Learn more</span>
+                <svg className="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </div>
 
               {/* Hover Effect */}
               <div className={`absolute inset-0 rounded-2xl bg-gradient-to-r ${service.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-300`}></div>
