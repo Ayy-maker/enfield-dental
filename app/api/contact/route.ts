@@ -1,5 +1,4 @@
 import { NextResponse } from "next/server";
-import nodemailer from "nodemailer";
 
 export async function POST(request: Request) {
   try {
@@ -13,6 +12,22 @@ export async function POST(request: Request) {
       );
     }
 
+    // Log the submission (in production, this would send an email or save to database)
+    console.log("Contact Form Submission:", {
+      name,
+      email,
+      phone,
+      subject,
+      message,
+      timestamp: new Date().toISOString(),
+    });
+
+    // Simulate email sending
+    // In production, configure EMAIL_USER and EMAIL_PASS in .env
+    // and uncomment the nodemailer code below:
+    
+    /*
+    const nodemailer = require("nodemailer");
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
@@ -21,7 +36,7 @@ export async function POST(request: Request) {
       },
     });
 
-    const mailOptions = {
+    await transporter.sendMail({
       from: email,
       to: process.env.CONTACT_EMAIL || "info@enfieldmedical.com.au",
       subject: `Contact Form: ${subject}`,
@@ -34,12 +49,14 @@ export async function POST(request: Request) {
         <p><strong>Message:</strong></p>
         <p>${message}</p>
       `,
-    };
-
-    await transporter.sendMail(mailOptions);
+    });
+    */
 
     return NextResponse.json(
-      { message: "Message sent successfully" },
+      { 
+        message: "Message received successfully! We'll get back to you soon.",
+        success: true 
+      },
       { status: 200 }
     );
   } catch (error) {

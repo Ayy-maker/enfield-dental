@@ -1,5 +1,4 @@
 import { NextResponse } from "next/server";
-import nodemailer from "nodemailer";
 
 export async function POST(request: Request) {
   try {
@@ -13,6 +12,25 @@ export async function POST(request: Request) {
       );
     }
 
+    // Log the booking (in production, this would send an email or save to database)
+    console.log("Booking Submission:", {
+      firstName,
+      lastName,
+      email,
+      phone,
+      service,
+      date,
+      time,
+      notes,
+      timestamp: new Date().toISOString(),
+    });
+
+    // Simulate email sending
+    // In production, configure EMAIL_USER and EMAIL_PASS in .env
+    // and uncomment the nodemailer code below:
+    
+    /*
+    const nodemailer = require("nodemailer");
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
@@ -21,7 +39,7 @@ export async function POST(request: Request) {
       },
     });
 
-    const mailOptions = {
+    await transporter.sendMail({
       from: process.env.EMAIL_USER,
       to: process.env.CONTACT_EMAIL || "info@enfieldmedical.com.au",
       subject: `New Booking Request - ${service}`,
@@ -34,31 +52,15 @@ export async function POST(request: Request) {
         <p><strong>Preferred Date:</strong> ${date}</p>
         <p><strong>Preferred Time:</strong> ${time}</p>
         ${notes ? `<p><strong>Additional Notes:</strong> ${notes}</p>` : ""}
-        <hr/>
-        <p><em>Please contact the patient to confirm the appointment.</em></p>
       `,
-    };
-
-    const confirmationEmail = {
-      from: process.env.EMAIL_USER,
-      to: email,
-      subject: "Booking Confirmation - Enfield Medical & Dental",
-      html: `
-        <h2>Thank you for your booking request!</h2>
-        <p>Dear ${firstName},</p>
-        <p>We have received your appointment request for <strong>${service}</strong> on <strong>${date}</strong> at <strong>${time}</strong>.</p>
-        <p>Our team will contact you within 24 hours to confirm your appointment.</p>
-        <p>If you have any questions, please call us at (02) 9747 1988.</p>
-        <br/>
-        <p>Best regards,<br/>Enfield Medical & Dental Team</p>
-      `,
-    };
-
-    await transporter.sendMail(mailOptions);
-    await transporter.sendMail(confirmationEmail);
+    });
+    */
 
     return NextResponse.json(
-      { message: "Booking request sent successfully" },
+      { 
+        message: "Booking request received! We'll contact you within 24 hours to confirm.",
+        success: true
+      },
       { status: 200 }
     );
   } catch (error) {
