@@ -1,7 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'export',
+  basePath: '/enfield-dental',
   images: {
-    domains: ['images.unsplash.com', 'images.pexels.com'],
+    unoptimized: true,
   },
   experimental: {
     optimizePackageImports: ['lucide-react'],
