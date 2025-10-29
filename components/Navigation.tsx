@@ -34,22 +34,17 @@ export function Navigation() {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         isScrolled
-          ? "bg-white/95 backdrop-blur-md shadow-lg"
-          : "bg-transparent"
+          ? "bg-white/80 backdrop-blur-md border-b border-gray-200"
+          : "bg-white/50 backdrop-blur-sm"
       )}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              className="smooth-hover"
-            >
-              <span className="text-lg sm:text-xl font-bold bg-gradient-to-r from-teal-600 via-cyan-600 to-blue-600 bg-clip-text text-transparent">
-                Enfield Medical & Dental
-              </span>
-            </motion.div>
+            <span className="text-xl font-bold text-gray-900">
+              Enfield Medical & Dental
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -58,18 +53,18 @@ export function Navigation() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-gray-700 hover:text-blue-600 transition-colors font-medium"
+                className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
               >
                 {item.label}
               </Link>
             ))}
             <motion.a
               href="#booking"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-6 py-2.5 bg-gradient-to-r from-teal-600 to-cyan-600 text-white rounded-full font-medium shadow-lg hover:shadow-xl transition-shadow"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              className="px-6 py-2.5 bg-black text-white rounded-full text-sm font-medium hover:bg-gray-900 transition-colors"
             >
-              Book Now
+              Book appointment
             </motion.a>
           </div>
 
