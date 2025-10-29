@@ -41,21 +41,13 @@ export function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2 sm:space-x-3">
+          <Link href="/" className="flex items-center">
             <motion.div
               whileHover={{ scale: 1.05 }}
-              className="flex items-center space-x-2 sm:space-x-3 smooth-hover"
+              className="smooth-hover"
             >
-              <img 
-                src="/images/team-logo.jpg" 
-                alt="Enfield Medical & Dental Team" 
-                className="h-10 w-10 sm:h-12 sm:w-12 rounded-full object-cover ring-2 ring-teal-500/20 hover:ring-teal-500/40 transition-all"
-              />
-              <span className="text-lg sm:text-xl font-bold bg-gradient-to-r from-teal-600 via-cyan-600 to-blue-600 bg-clip-text text-transparent hidden sm:inline">
+              <span className="text-lg sm:text-xl font-bold bg-gradient-to-r from-teal-600 via-cyan-600 to-blue-600 bg-clip-text text-transparent">
                 Enfield Medical & Dental
-              </span>
-              <span className="text-base font-bold bg-gradient-to-r from-teal-600 via-cyan-600 to-blue-600 bg-clip-text text-transparent sm:hidden">
-                EMD
               </span>
             </motion.div>
           </Link>

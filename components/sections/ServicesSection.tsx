@@ -14,7 +14,7 @@ const services = [
     icon: Smile,
     title: "Cosmetic & Restorative Dentistry",
     description: "Complete smile makeovers including teeth whitening, veneers, crowns, orthodontic treatment, fillings, and fixed appliances to restore functionality and boost confidence.",
-    gradient: "from-purple-500 to-pink-500",
+    gradient: "from-purple-500 via-fuchsia-500 to-pink-500",
   },
   {
     icon: Zap,

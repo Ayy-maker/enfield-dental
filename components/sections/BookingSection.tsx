@@ -53,7 +53,7 @@ export function BookingSection() {
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-3xl p-8 shadow-xl"
+            className="bg-gradient-to-br from-teal-50 to-cyan-50 rounded-3xl p-8 shadow-xl"
           >
             <form className="space-y-6">
               {/* Personal Info */}
@@ -151,8 +151,8 @@ export function BookingSection() {
                       onClick={() => setSelectedTime(time)}
                       className={`px-3 py-2 rounded-lg text-sm font-medium transition-all ${
                         selectedTime === time
-                          ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg"
-                          : "bg-white text-gray-700 border border-gray-300 hover:border-blue-600"
+                          ? "bg-gradient-to-r from-teal-600 to-cyan-600 text-white shadow-lg"
+                          : "bg-white text-gray-700 border border-gray-300 hover:border-teal-600"
                       }`}
                     >
                       {time}
@@ -216,10 +216,10 @@ export function BookingSection() {
               </p>
             </div>
 
-            <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-6 text-white">
+            <div className="bg-gradient-to-r from-teal-600 via-cyan-600 to-blue-600 rounded-2xl p-6 text-white">
               <CheckCircle2 className="w-10 h-10 mb-4" />
               <h3 className="text-xl font-bold mb-2">Why Book With Us?</h3>
-              <ul className="space-y-2 text-blue-100">
+              <ul className="space-y-2 text-teal-100">
                 <li>✓ Same-day emergency appointments</li>
                 <li>✓ No long waiting times</li>
                 <li>✓ Reminder notifications</li>

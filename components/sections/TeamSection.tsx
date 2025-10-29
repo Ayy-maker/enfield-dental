@@ -54,7 +54,7 @@ export function TeamSection() {
             initial={{ opacity: 0, scale: 0.5 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="inline-block px-4 py-2 bg-purple-100 text-purple-600 rounded-full text-sm font-semibold mb-4"
+            className="inline-block px-4 py-2 bg-teal-100 text-teal-600 rounded-full text-sm font-semibold mb-4"
           >
             Our Team
           </motion.span>
@@ -92,7 +92,7 @@ export function TeamSection() {
                   <h3 className="text-2xl font-bold text-gray-900 mb-1">
                     {member.name}
                   </h3>
-                  <p className="text-purple-600 font-semibold">{member.role}</p>
+                  <p className="text-teal-600 font-semibold">{member.role}</p>
                 </div>
 
                 <div className="space-y-2 text-sm">
@@ -114,10 +114,7 @@ export function TeamSection() {
                   {member.bio}
                 </p>
 
-                <button className="w-full flex items-center justify-center space-x-2 px-4 py-2 bg-white border-2 border-gray-200 rounded-lg hover:border-teal-600 hover:text-teal-600 transition-colors group">
-                  <Linkedin className="w-4 h-4" />
-                  <span className="text-sm font-medium">View Profile</span>
-                </button>
+
               </div>
             </motion.div>
           ))}

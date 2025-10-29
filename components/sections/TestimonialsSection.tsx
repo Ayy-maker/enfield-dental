@@ -47,7 +47,7 @@ export function TestimonialsSection() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   return (
-    <section id="testimonials" className="py-24 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 overflow-hidden">
+    <section id="testimonials" className="py-24 bg-gradient-to-br from-teal-50 via-cyan-50 to-blue-50 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -106,7 +106,7 @@ export function TestimonialsSection() {
 
               {/* Author */}
               <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-r from-blue-400 to-purple-400 flex items-center justify-center text-white font-bold text-lg">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-r from-teal-400 to-cyan-400 flex items-center justify-center text-white font-bold text-lg">
                   {testimonial.name.charAt(0)}
                 </div>
                 <div>

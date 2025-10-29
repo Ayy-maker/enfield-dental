@@ -125,8 +125,8 @@ export function HeroSection() {
             >
               <div className="aspect-square rounded-3xl overflow-hidden shadow-2xl">
                 <img 
-                  src="/images/hero-image.png" 
-                  alt="Enfield Medical and Dental" 
+                  src="/images/team-photo-full.jpg" 
+                  alt="Enfield Medical and Dental Team" 
                   className="w-full h-full object-cover"
                 />
               </div>

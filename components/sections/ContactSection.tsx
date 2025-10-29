@@ -169,8 +169,8 @@ export function ContactSection() {
             {/* Phone */}
             <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
               <div className="flex items-start space-x-4">
-                <div className="p-3 bg-purple-100 rounded-lg">
-                  <Phone className="w-6 h-6 text-purple-600" />
+                <div className="p-3 bg-teal-100 rounded-lg">
+                  <Phone className="w-6 h-6 text-teal-600" />
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold text-gray-900 mb-1">Call Us</h3>
@@ -200,7 +200,7 @@ export function ContactSection() {
             </div>
 
             {/* Hours */}
-            <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-6 text-white shadow-lg">
+            <div className="bg-gradient-to-r from-teal-600 via-cyan-600 to-blue-600 rounded-2xl p-6 text-white shadow-lg">
               <div className="flex items-start space-x-4">
                 <div className="p-3 bg-white/20 rounded-lg">
                   <Clock className="w-6 h-6" />
