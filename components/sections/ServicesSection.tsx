@@ -97,14 +97,6 @@ export function ServicesSection() {
               <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
                 {service.description}
               </p>
-              
-              {/* Hover indicator */}
-              <div className="mt-4 sm:mt-6 flex items-center text-sm font-medium text-gray-400 group-hover:text-gray-900 transition-colors">
-                <span>Learn more</span>
-                <svg className="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </div>
 
               {/* Hover Effect */}
               <div className={`absolute inset-0 rounded-2xl bg-gradient-to-r ${service.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-300`}></div>
