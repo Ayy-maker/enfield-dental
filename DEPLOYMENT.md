@@ -1,31 +1,54 @@
 # 🚀 Deployment Guide - Enfield Medical & Dental
 
-## GitHub Setup
+## ✅ Current Deployment Status
 
-### 1. Create GitHub Repository
+**Live Site:** https://ayy-maker.github.io/enfield-dental/
 
-Go to [GitHub](https://github.com/new) and create a new repository:
+**Repository:** https://github.com/ayy-maker/enfield-dental
 
-**Repository Settings:**
-- **Name:** `enfield`
-- **Description:** Premium dental website for Enfield Medical & Dental
-- **Visibility:** Public or Private (your choice)
-- **DO NOT** initialize with README (we already have one)
+**Status:** ✅ Deployed and working perfectly via GitHub Pages
 
-### 2. Push Code to GitHub
+---
 
-Run these commands in your terminal:
+## GitHub Pages Deployment (Current Setup)
+
+### How It Works
+
+Your site is automatically deployed using:
+1. **Static Export:** Next.js configured with `output: 'export'` in `next.config.js`
+2. **GitHub Actions:** Automatic deployment on every push to `main` branch
+3. **Custom Base Path:** Configured as `/enfield-dental` for GitHub Pages subdirectory
+
+### To Update the Live Site
+
+Simply push your changes:
 
 ```bash
 cd /Users/ayush/projects/Enfield
 
-# Add remote repository (replace YOUR_USERNAME with your GitHub username)
-git remote add origin https://github.com/YOUR_USERNAME/enfield.git
+# Stage your changes
+git add .
 
-# Push to GitHub
-git branch -M main
-git push -u origin main
+# Commit with a message
+git commit -m "Update website content"
+
+# Push to GitHub (triggers automatic deployment)
+git push origin main
 ```
+
+**Deployment Time:** 2-3 minutes after pushing
+
+### GitHub Pages Settings
+
+Your repository settings:
+- **Source:** GitHub Actions
+- **Branch:** `main`
+- **Custom domain:** Not configured (using `github.io` subdomain)
+- **Enforce HTTPS:** ✅ Enabled
+
+---
+
+## Alternative Deployment Options
 
 ---
 

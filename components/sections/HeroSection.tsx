@@ -119,7 +119,7 @@ export function HeroSection() {
           >
             <div className="relative h-[500px] sm:h-[600px] lg:h-[700px] rounded-2xl sm:rounded-3xl overflow-hidden group">
               <motion.img 
-                src="/images/team-photo-full.jpg" 
+                src="/enfield-dental/images/team-photo-full.jpg" 
                 alt="Enfield Medical and Dental Team" 
                 className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out"
                 initial={{ scale: 1.1 }}

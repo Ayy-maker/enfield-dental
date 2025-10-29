@@ -2,6 +2,12 @@
 
 A modern, responsive, and high-performance website for Enfield Medical & Dental practice built with Next.js 14, TypeScript, Tailwind CSS, and Framer Motion.
 
+## 🌐 Live Site
+
+**Production:** https://ayy-maker.github.io/enfield-dental/
+
+**Repository:** https://github.com/ayy-maker/enfield-dental
+
 ## ✨ Features
 
 ### 🎨 Design
@@ -52,8 +58,8 @@ A modern, responsive, and high-performance website for Enfield Medical & Dental 
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/enfield.git
-   cd enfield
+   git clone https://github.com/ayy-maker/enfield-dental.git
+   cd enfield-dental
    ```
 
 2. **Install dependencies**
@@ -82,7 +88,25 @@ A modern, responsive, and high-performance website for Enfield Medical & Dental 
 
 ## 🚀 Deployment
 
-### Vercel (Recommended)
+### GitHub Pages (Current Deployment)
+
+✅ **Currently deployed and live at:** https://ayy-maker.github.io/enfield-dental/
+
+The site is configured for static export using:
+- `next.config.js` with `output: 'export'`
+- GitHub Actions workflow for automatic deployment
+- Custom base path: `/enfield-dental`
+
+**To update the live site:**
+```bash
+git add .
+git commit -m "Your update message"
+git push origin main
+```
+
+The site will automatically rebuild and deploy via GitHub Actions.
+
+### Alternative: Vercel (Also Supported)
 
 1. **Push to GitHub**
    ```bash
