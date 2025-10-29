@@ -49,11 +49,11 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight"
+              className="text-responsive-xl font-bold text-gray-900 leading-tight"
             >
               Your Smile,
               <br />
-              <span className="bg-gradient-to-r from-teal-600 via-cyan-600 to-blue-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-teal-600 via-cyan-600 to-blue-600 bg-clip-text text-transparent gradient-animate">
                 Our Passion
               </span>
             </motion.h1>
@@ -62,7 +62,7 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
-              className="text-xl text-gray-600 leading-relaxed"
+              className="text-responsive-md text-gray-600 leading-relaxed"
             >
               Experience world-class dental care with our family-owned practice. Advanced technology, personalized attention, and a commitment to your perfect smile.
             </motion.p>
@@ -77,7 +77,7 @@ export function HeroSection() {
                 href="#booking"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="group px-8 py-4 bg-gradient-to-r from-teal-600 via-cyan-600 to-blue-600 text-white rounded-full font-semibold shadow-2xl hover:shadow-teal-500/50 transition-all flex items-center space-x-2"
+                className="group px-8 py-4 bg-gradient-to-r from-teal-600 via-cyan-600 to-blue-600 text-white rounded-full font-semibold shadow-2xl hover:shadow-teal-500/50 smooth-hover flex items-center space-x-2"
               >
                 <span>Book Consultation</span>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -87,7 +87,7 @@ export function HeroSection() {
                 href="#services"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-white text-gray-900 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all border-2 border-gray-200"
+                className="px-8 py-4 bg-white text-gray-900 rounded-full font-semibold shadow-lg hover:shadow-xl smooth-hover border-2 border-gray-200 hover:border-teal-500"
               >
                 Our Services
               </motion.a>
