@@ -23,21 +23,21 @@ export function Footer() {
               <motion.a
                 href="#"
                 whileHover={{ scale: 1.1 }}
-                className="p-2 bg-gray-800 rounded-full hover:bg-blue-600 transition-colors"
+                className="p-2 bg-gray-800 rounded-full hover:bg-teal-600 transition-colors"
               >
                 <Facebook size={20} />
               </motion.a>
               <motion.a
                 href="#"
                 whileHover={{ scale: 1.1 }}
-                className="p-2 bg-gray-800 rounded-full hover:bg-blue-600 transition-colors"
+                className="p-2 bg-gray-800 rounded-full hover:bg-teal-600 transition-colors"
               >
                 <Instagram size={20} />
               </motion.a>
               <motion.a
                 href="#"
                 whileHover={{ scale: 1.1 }}
-                className="p-2 bg-gray-800 rounded-full hover:bg-blue-600 transition-colors"
+                className="p-2 bg-gray-800 rounded-full hover:bg-teal-600 transition-colors"
               >
                 <Linkedin size={20} />
               </motion.a>

@@ -11,8 +11,9 @@ const team = [
     experience: "25+ years",
     education: "BDS, University of Sydney",
     bio: "Specialized in creating beautiful smiles with a gentle approach to patient care.",
-    avatar: "👩‍⚕️",
-    image: "/images/team-photo.jpg",
+    avatarEmoji: "👩‍⚕️",
+    gradientFrom: "from-rose-400",
+    gradientTo: "to-pink-500",
   },
   {
     name: "Dr. Michael Wong",
@@ -21,8 +22,9 @@ const team = [
     experience: "15+ years",
     education: "BDS, MDent (Ortho)",
     bio: "Expert in Invisalign and modern orthodontic treatments for all ages.",
-    avatar: "👨‍⚕️",
-    image: "/images/team-photo.jpg",
+    avatarEmoji: "👨‍⚕️",
+    gradientFrom: "from-blue-400",
+    gradientTo: "to-cyan-500",
   },
   {
     name: "Dr. Lisa Zhang",
@@ -31,8 +33,9 @@ const team = [
     experience: "12+ years",
     education: "BDS, DClinDent (Perio)",
     bio: "Pioneer in laser dentistry with advanced pain management techniques.",
-    avatar: "👩‍⚕️",
-    image: "/images/team-photo.jpg",
+    avatarEmoji: "👩‍⚕️",
+    gradientFrom: "from-teal-400",
+    gradientTo: "to-emerald-500",
   },
 ];
 
@@ -76,20 +79,11 @@ export function TeamSection() {
               className="group bg-gradient-to-br from-gray-50 to-blue-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
             >
               {/* Avatar */}
-              <div className="relative h-64 bg-gradient-to-br from-teal-400 to-cyan-400 overflow-hidden">
-                <img 
-                  src={member.image} 
-                  alt={member.name}
-                  className="w-full h-full object-cover"
-                  onError={(e) => {
-                    e.currentTarget.style.display = 'none';
-                    const fallback = document.createElement('div');
-                    fallback.className = 'w-full h-full flex items-center justify-center text-8xl';
-                    fallback.textContent = member.avatar;
-                    e.currentTarget.parentElement?.appendChild(fallback);
-                  }}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <div className={`relative h-64 bg-gradient-to-br ${member.gradientFrom} ${member.gradientTo} flex items-center justify-center overflow-hidden`}>
+                <div className="text-9xl transform group-hover:scale-110 transition-transform duration-300">
+                  {member.avatarEmoji}
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
               </div>
 
               {/* Content */}

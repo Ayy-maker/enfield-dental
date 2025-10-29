@@ -178,7 +178,7 @@ export function BookingSection() {
                 type="submit"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="w-full px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-semibold shadow-xl hover:shadow-2xl transition-all"
+                className="w-full px-8 py-4 bg-gradient-to-r from-teal-600 via-cyan-600 to-blue-600 text-white rounded-full font-semibold shadow-xl hover:shadow-2xl transition-all"
               >
                 Confirm Booking
               </motion.button>
@@ -192,16 +192,16 @@ export function BookingSection() {
             viewport={{ once: true }}
             className="space-y-6"
           >
-            <div className="bg-white rounded-2xl p-6 shadow-lg border-2 border-blue-100">
-              <Calendar className="w-10 h-10 text-blue-600 mb-4" />
+            <div className="bg-white rounded-2xl p-6 shadow-lg border-2 border-teal-100 hover:border-teal-300 transition-colors">
+              <Calendar className="w-10 h-10 text-teal-600 mb-4" />
               <h3 className="text-xl font-bold text-gray-900 mb-2">Flexible Scheduling</h3>
               <p className="text-gray-600">
                 We offer convenient appointment times to fit your busy schedule, including Saturday mornings.
               </p>
             </div>
 
-            <div className="bg-white rounded-2xl p-6 shadow-lg border-2 border-purple-100">
-              <Clock className="w-10 h-10 text-purple-600 mb-4" />
+            <div className="bg-white rounded-2xl p-6 shadow-lg border-2 border-cyan-100 hover:border-cyan-300 transition-colors">
+              <Clock className="w-10 h-10 text-cyan-600 mb-4" />
               <h3 className="text-xl font-bold text-gray-900 mb-2">Quick Response</h3>
               <p className="text-gray-600">
                 We'll confirm your appointment within 24 hours via email or phone call.

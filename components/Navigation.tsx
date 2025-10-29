@@ -65,7 +65,7 @@ export function Navigation() {
               href="#booking"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-6 py-2.5 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-medium shadow-lg hover:shadow-xl transition-shadow"
+              className="px-6 py-2.5 bg-gradient-to-r from-teal-600 to-cyan-600 text-white rounded-full font-medium shadow-lg hover:shadow-xl transition-shadow"
             >
               Book Now
             </motion.a>

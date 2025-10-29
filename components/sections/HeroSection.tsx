@@ -123,23 +123,11 @@ export function HeroSection() {
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
               className="relative z-10"
             >
-              <div className="aspect-square rounded-3xl bg-gradient-to-br from-teal-100 to-cyan-100 p-8 shadow-2xl overflow-hidden">
+              <div className="aspect-square rounded-3xl overflow-hidden shadow-2xl">
                 <img 
                   src="/images/hero-image.png" 
                   alt="Enfield Medical and Dental" 
-                  className="w-full h-full rounded-2xl object-cover"
-                  onError={(e) => {
-                    e.currentTarget.style.display = 'none';
-                    e.currentTarget.parentElement!.innerHTML = `
-                      <div class="w-full h-full rounded-2xl bg-gradient-to-br from-teal-600 to-cyan-600 flex items-center justify-center">
-                        <div class="text-center text-white space-y-4">
-                          <div class="text-6xl font-bold">✨</div>
-                          <div class="text-2xl font-semibold">Premium Care</div>
-                          <div class="text-teal-100">Advanced Technology</div>
-                        </div>
-                      </div>
-                    `;
-                  }}
+                  className="w-full h-full object-cover"
                 />
               </div>
             </motion.div>

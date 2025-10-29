@@ -81,11 +81,14 @@ export function TestimonialsSection() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ y: -10 }}
-              className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 relative"
+              whileHover={{ y: -10, scale: 1.02 }}
+              className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 relative overflow-hidden"
             >
+              {/* Decorative corner gradient */}
+              <div className="absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-br from-teal-50 to-transparent rounded-full"></div>
+              
               {/* Quote Icon */}
-              <div className="absolute -top-4 -left-4 w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center shadow-lg">
+              <div className="absolute -top-4 -left-4 w-12 h-12 bg-gradient-to-r from-teal-600 to-cyan-600 rounded-full flex items-center justify-center shadow-lg">
                 <Quote className="w-6 h-6 text-white" />
               </div>
 

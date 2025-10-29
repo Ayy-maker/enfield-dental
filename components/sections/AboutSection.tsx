@@ -67,7 +67,7 @@ export function AboutSection() {
               href="#contact"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="inline-block px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-semibold shadow-xl hover:shadow-2xl transition-all mt-6"
+              className="inline-block px-8 py-4 bg-gradient-to-r from-teal-600 via-cyan-600 to-blue-600 text-white rounded-full font-semibold shadow-xl hover:shadow-2xl transition-all mt-6"
             >
               Learn More About Us
             </motion.a>
@@ -84,7 +84,7 @@ export function AboutSection() {
             {/* Main Card */}
             <div className="relative bg-white rounded-3xl p-8 shadow-2xl">
               <div className="space-y-6">
-                <div className="flex items-center justify-between p-6 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl text-white">
+                <div className="flex items-center justify-between p-6 bg-gradient-to-r from-teal-500 to-cyan-500 rounded-2xl text-white">
                   <div>
                     <div className="text-3xl font-bold">30+</div>
                     <div className="text-blue-100">Years Experience</div>
