@@ -26,7 +26,7 @@ const services = [
   {
     title: "Emergency Dental Services",
     description: "Prompt and professional emergency dental care when you need it most. We understand dental emergencies can't wait and offer same-day appointments.",
-    image: "/enfield-dental/images/emergency-dental.jpg",
+    image: "/enfield-dental/images/emergency-dental-unsplash.jpg",
   },
   {
     title: "Chinese-Speaking Dentists",
