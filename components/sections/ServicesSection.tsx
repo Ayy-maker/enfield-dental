@@ -6,27 +6,27 @@ const services = [
   {
     title: "Invisalign & 3D Digital Scanning",
     description: "iTero intraoral 3D digital scanner provides a dynamic snapshot of your oral health with caries detection and demonstrates treatment plans for Invisalign.",
-    image: "/enfield-dental/images/office-1.jpg",
+    image: "/enfield-dental/images/invisalign-scanner.jpg",
   },
   {
     title: "Cosmetic & Restorative Dentistry",
     description: "Complete smile makeovers including teeth whitening, veneers, crowns, orthodontic treatment, fillings, and fixed appliances to restore functionality and boost confidence.",
-    image: "/enfield-dental/images/office-2.jpg",
+    image: "/enfield-dental/images/cosmetic-dentistry.jpg",
   },
   {
     title: "Laser Dentistry",
     description: "Fotona Lightwalker - the most powerful dental laser with 2 wavelengths. Enhanced treatments including Nightlase anti-snoring, pain management, and facial aesthetics.",
-    image: "/enfield-dental/images/office-1.jpg",
+    image: "/enfield-dental/images/laser-dentistry.jpg",
   },
   {
     title: "Family Dental Care",
     description: "Comprehensive dental care for all ages, from routine check-ups to advanced treatments. We focus on prevention and patient education for long-term oral health.",
-    image: "/enfield-dental/images/team-photo.jpg",
+    image: "/enfield-dental/images/family-dentistry.jpg",
   },
   {
     title: "Emergency Dental Services",
     description: "Prompt and professional emergency dental care when you need it most. We understand dental emergencies can't wait and offer same-day appointments.",
-    image: "/enfield-dental/images/office-2.jpg",
+    image: "/enfield-dental/images/emergency-dental.jpg",
   },
   {
     title: "Chinese-Speaking Dentists",
