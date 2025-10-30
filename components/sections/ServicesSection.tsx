@@ -1,6 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useState } from "react";
+import { ChevronDown } from "lucide-react";
 
 const services = [
   {
@@ -36,6 +38,8 @@ const services = [
 ];
 
 export function ServicesSection() {
+  const [expandedCard, setExpandedCard] = useState<number | null>(null);
+
   return (
     <section id="services" className="py-16 sm:py-24 lg:py-32 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -65,45 +69,70 @@ export function ServicesSection() {
 
         {/* Services Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 lg:gap-6">
-          {services.map((service, index) => (
-            <motion.div
-              key={service.title}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ 
-                duration: 0.6, 
-                delay: index * 0.1,
-                ease: [0.25, 0.46, 0.45, 0.94]
-              }}
-              className="group relative bg-white rounded-2xl overflow-hidden border border-gray-100 hover:border-teal-200 cursor-pointer touch-manipulation shadow-md hover:shadow-2xl transition-all duration-300"
-            >
-              {/* Clean Image */}
-              <div className="relative h-52 sm:h-60 md:h-64 overflow-hidden bg-gray-100">
-                <img
-                  src={service.image}
-                  alt={service.title}
-                  className="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-700 ease-out"
-                  loading="lazy"
-                />
-                {/* Subtle Dark Overlay on Hover Only */}
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300"></div>
-              </div>
+          {services.map((service, index) => {
+            const isExpanded = expandedCard === index;
+            
+            return (
+              <motion.div
+                key={service.title}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ 
+                  duration: 0.6, 
+                  delay: index * 0.1,
+                  ease: [0.25, 0.46, 0.45, 0.94]
+                }}
+                onClick={() => setExpandedCard(isExpanded ? null : index)}
+                className="group relative bg-white rounded-2xl overflow-hidden border border-gray-100 hover:border-teal-200 cursor-pointer touch-manipulation shadow-md hover:shadow-2xl transition-all duration-300"
+              >
+                {/* Clean Image */}
+                <div className="relative h-52 sm:h-60 md:h-64 overflow-hidden bg-gray-100">
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-700 ease-out"
+                    loading="lazy"
+                  />
+                  {/* Subtle Dark Overlay on Hover Only */}
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300"></div>
+                </div>
 
-              {/* Content */}
-              <div className="p-6 sm:p-7 lg:p-8">
-                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900 mb-3 sm:mb-4 group-hover:text-teal-600 transition-colors leading-tight">
-                  {service.title}
-                </h3>
-                <p className="text-sm sm:text-base text-gray-600 leading-relaxed line-clamp-4">
-                  {service.description}
-                </p>
-              </div>
+                {/* Content */}
+                <div className="p-6 sm:p-7 lg:p-8">
+                  <div className="flex items-start justify-between gap-2 mb-3 sm:mb-4">
+                    <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900 group-hover:text-teal-600 transition-colors leading-tight flex-1">
+                      {service.title}
+                    </h3>
+                    <motion.div
+                      animate={{ rotate: isExpanded ? 180 : 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="flex-shrink-0 mt-1"
+                    >
+                      <ChevronDown className="w-5 h-5 text-teal-600" />
+                    </motion.div>
+                  </div>
+                  <motion.p 
+                    className="text-sm sm:text-base text-gray-600 leading-relaxed overflow-hidden"
+                    animate={{ 
+                      height: isExpanded ? "auto" : "4.5rem",
+                    }}
+                    transition={{ duration: 0.3 }}
+                    style={{ 
+                      display: isExpanded ? "block" : "-webkit-box",
+                      WebkitLineClamp: isExpanded ? "unset" : 3,
+                      WebkitBoxOrient: "vertical" as const,
+                    }}
+                  >
+                    {service.description}
+                  </motion.p>
+                </div>
 
-              {/* Bottom Accent Line */}
-              <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-teal-500 via-cyan-500 to-blue-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
-            </motion.div>
-          ))}
+                {/* Bottom Accent Line */}
+                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-teal-500 via-cyan-500 to-blue-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+              </motion.div>
+            );
+          })}
         </div>
 
         {/* CTA */}
