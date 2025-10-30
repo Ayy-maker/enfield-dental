@@ -6,7 +6,7 @@ import { ArrowRight, Sparkles, Shield, Award, Phone } from "lucide-react";
 export function HeroSection() {
   return (
     <section id="home" className="relative min-h-screen flex items-center overflow-hidden bg-white">
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-32">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-28 md:py-32 lg:py-20">
         <div className="grid lg:grid-cols-12 gap-8 items-center">
           {/* Left Column - Text Content */}
           <motion.div
@@ -31,7 +31,7 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="text-6xl sm:text-7xl lg:text-8xl font-bold text-gray-900 leading-[0.9] tracking-tight"
+              className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-gray-900 leading-[0.9] tracking-tight"
             >
               Discover
               <br />
@@ -44,7 +44,7 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
-              className="text-lg text-gray-600 max-w-lg"
+              className="text-base sm:text-lg md:text-xl text-gray-600 max-w-lg leading-relaxed"
             >
               Your trusted dental practice for premium care, offering personalized service and cutting-edge treatments.
             </motion.p>
@@ -53,13 +53,13 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
-              className="flex flex-wrap gap-3"
+              className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4"
             >
               <motion.a
                 href="#booking"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="group px-8 py-4 bg-black text-white rounded-full font-medium flex items-center space-x-2 hover:bg-gray-900 transition-all glow-hover overflow-hidden"
+                className="group px-6 sm:px-8 py-4 bg-black text-white rounded-full font-medium flex items-center justify-center space-x-2 hover:bg-gray-900 transition-all glow-hover overflow-hidden min-h-[48px] touch-manipulation shadow-md hover:shadow-lg text-sm sm:text-base"
               >
                 <span>Book appointment</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
@@ -69,10 +69,10 @@ export function HeroSection() {
                 href="tel:+61297474777"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="px-8 py-4 bg-white text-gray-900 rounded-full font-medium border border-gray-200 hover:border-black transition-all flex items-center space-x-2 smooth-hover"
+                className="px-6 sm:px-8 py-4 bg-white text-gray-900 rounded-full font-medium border-2 border-gray-200 hover:border-black transition-all flex items-center justify-center space-x-2 smooth-hover min-h-[48px] touch-manipulation shadow-sm hover:shadow-md text-sm sm:text-base"
               >
                 <Phone className="w-4 h-4" />
-                <span>(02) 9747 4777</span>
+                <span className="whitespace-nowrap">(02) 9747 4777</span>
               </motion.a>
             </motion.div>
 
@@ -81,31 +81,31 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6, duration: 0.7 }}
-              className="grid grid-cols-3 gap-6 sm:gap-8 pt-8 max-w-lg"
+              className="grid grid-cols-3 gap-4 sm:gap-6 md:gap-8 pt-8 max-w-lg"
             >
               <motion.div
                 whileHover={{ y: -4 }}
                 transition={{ duration: 0.3 }}
                 className="cursor-default"
               >
-                <div className="text-3xl sm:text-4xl font-bold text-gray-900">5000+</div>
-                <div className="text-xs sm:text-sm text-gray-600 mt-1">Happy patients</div>
+                <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">5000+</div>
+                <div className="text-xs sm:text-sm md:text-base text-gray-600 mt-1">Happy patients</div>
               </motion.div>
               <motion.div
                 whileHover={{ y: -4 }}
                 transition={{ duration: 0.3 }}
                 className="cursor-default"
               >
-                <div className="text-3xl sm:text-4xl font-bold text-gray-900">30+</div>
-                <div className="text-xs sm:text-sm text-gray-600 mt-1">Years experience</div>
+                <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">30+</div>
+                <div className="text-xs sm:text-sm md:text-base text-gray-600 mt-1">Years experience</div>
               </motion.div>
               <motion.div
                 whileHover={{ y: -4 }}
                 transition={{ duration: 0.3 }}
                 className="cursor-default"
               >
-                <div className="text-3xl sm:text-4xl font-bold text-gray-900">4.9</div>
-                <div className="text-xs sm:text-sm text-gray-600 mt-1">Rating</div>
+                <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">4.9</div>
+                <div className="text-xs sm:text-sm md:text-base text-gray-600 mt-1">Rating</div>
               </motion.div>
             </motion.div>
           </motion.div>
@@ -115,9 +115,9 @@ export function HeroSection() {
             initial={{ opacity: 0, scale: 0.96 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
-            className="lg:col-span-6 relative"
+            className="lg:col-span-6 relative mt-8 lg:mt-0"
           >
-            <div className="relative h-[500px] sm:h-[600px] lg:h-[700px] rounded-2xl sm:rounded-3xl overflow-hidden group">
+            <div className="relative h-[400px] sm:h-[500px] md:h-[600px] lg:h-[700px] rounded-2xl sm:rounded-3xl overflow-hidden group shadow-2xl">
               <motion.img 
                 src="/enfield-dental/images/team-photo-full.jpg" 
                 alt="Enfield Medical and Dental Team" 

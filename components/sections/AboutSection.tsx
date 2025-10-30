@@ -14,7 +14,7 @@ const features = [
 
 export function AboutSection() {
   return (
-    <section id="about" className="py-20 sm:py-32 bg-gray-50">
+    <section id="about" className="py-16 sm:py-24 lg:py-32 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Column - Content */}
@@ -34,20 +34,20 @@ export function AboutSection() {
               About Us
             </motion.span>
 
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900">
               Welcome to Enfield Medical & Dental
             </h2>
 
-            <p className="text-lg text-gray-600 leading-relaxed">
+            <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
               <strong>Enfield Medical and Dental</strong> is a trusted, family-owned practice with experienced Chinese-speaking dentists and long-standing staff. We provide personalized, high-quality care for all ages—from routine check-ups to advanced treatments—using the latest technology.
             </p>
 
-            <p className="text-lg text-gray-600 leading-relaxed">
+            <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
               We focus on prevention and patient education to support long-term oral health, with flexible payment options and most insurance plans accepted. Experience compassionate care in a warm, welcoming environment.
             </p>
 
             {/* Features List */}
-            <div className="grid sm:grid-cols-2 gap-4 pt-6">
+            <div className="grid sm:grid-cols-2 gap-3 sm:gap-4 pt-6">
               {features.map((feature, index) => (
                 <motion.div
                   key={feature}
@@ -67,7 +67,7 @@ export function AboutSection() {
               href="#contact"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="inline-block px-8 py-4 bg-gradient-to-r from-teal-600 via-cyan-600 to-blue-600 text-white rounded-full font-semibold shadow-xl hover:shadow-2xl transition-all mt-6"
+              className="inline-block px-8 py-4 bg-gradient-to-r from-teal-600 via-cyan-600 to-blue-600 text-white rounded-full font-semibold shadow-xl hover:shadow-2xl transition-all mt-6 min-h-[48px] touch-manipulation text-sm sm:text-base"
             >
               Learn More About Us
             </motion.a>

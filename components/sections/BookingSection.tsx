@@ -23,7 +23,7 @@ export function BookingSection() {
   const [selectedService, setSelectedService] = useState("");
 
   return (
-    <section id="booking" className="py-24 bg-white">
+    <section id="booking" className="py-16 sm:py-20 lg:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -39,25 +39,25 @@ export function BookingSection() {
           >
             Book Appointment
           </motion.span>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             Schedule Your Visit
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Choose a convenient time for your appointment. We'll confirm via email or phone
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
           {/* Booking Form */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="bg-gradient-to-br from-teal-50 to-cyan-50 rounded-3xl p-8 shadow-xl"
+            className="bg-gradient-to-br from-teal-50 to-cyan-50 rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-xl"
           >
             <form className="space-y-6">
               {/* Personal Info */}
-              <div className="grid sm:grid-cols-2 gap-4">
+              <div className="grid sm:grid-cols-2 gap-4 sm:gap-5">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     First Name *
@@ -65,7 +65,7 @@ export function BookingSection() {
                   <input
                     type="text"
                     required
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all"
+                    className="w-full px-4 py-3.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all min-h-[48px] text-base"
                     placeholder="John"
                   />
                 </div>
@@ -76,7 +76,7 @@ export function BookingSection() {
                   <input
                     type="text"
                     required
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all"
+                    className="w-full px-4 py-3.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all min-h-[48px] text-base"
                     placeholder="Doe"
                   />
                 </div>
@@ -89,7 +89,7 @@ export function BookingSection() {
                 <input
                   type="email"
                   required
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all"
+                  className="w-full px-4 py-3.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all min-h-[48px] text-base"
                   placeholder="john.doe@example.com"
                 />
               </div>
@@ -101,7 +101,7 @@ export function BookingSection() {
                 <input
                   type="tel"
                   required
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all"
+                  className="w-full px-4 py-3.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all min-h-[48px] text-base"
                   placeholder="04XX XXX XXX"
                 />
               </div>
@@ -115,7 +115,7 @@ export function BookingSection() {
                   required
                   value={selectedService}
                   onChange={(e) => setSelectedService(e.target.value)}
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all"
+                  className="w-full px-4 py-3.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all min-h-[48px] text-base"
                 >
                   <option value="">Select a service</option>
                   {services.map((service) => (
@@ -134,7 +134,7 @@ export function BookingSection() {
                   required
                   value={selectedDate}
                   onChange={(e) => setSelectedDate(e.target.value)}
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all"
+                  className="w-full px-4 py-3.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all min-h-[48px] text-base"
                 />
               </div>
 
@@ -143,16 +143,16 @@ export function BookingSection() {
                 <label className="block text-sm font-medium text-gray-700 mb-2">
                   Preferred Time *
                 </label>
-                <div className="grid grid-cols-3 sm:grid-cols-4 gap-2">
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
                   {timeSlots.map((time) => (
                     <button
                       key={time}
                       type="button"
                       onClick={() => setSelectedTime(time)}
-                      className={`px-3 py-2 rounded-lg text-sm font-medium transition-all ${
+                      className={`px-3 py-3 rounded-lg text-sm font-medium transition-all min-h-[44px] touch-manipulation ${
                         selectedTime === time
                           ? "bg-gradient-to-r from-teal-600 to-cyan-600 text-white shadow-lg"
-                          : "bg-white text-gray-700 border border-gray-300 hover:border-teal-600"
+                          : "bg-white text-gray-700 border-2 border-gray-300 hover:border-teal-600 active:bg-gray-50"
                       }`}
                     >
                       {time}
@@ -168,7 +168,7 @@ export function BookingSection() {
                 </label>
                 <textarea
                   rows={4}
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all text-base"
                   placeholder="Any specific concerns or questions?"
                 />
               </div>
@@ -178,7 +178,7 @@ export function BookingSection() {
                 type="submit"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="w-full px-8 py-4 bg-gradient-to-r from-teal-600 via-cyan-600 to-blue-600 text-white rounded-full font-semibold shadow-xl hover:shadow-2xl transition-all"
+                className="w-full px-8 py-4 bg-gradient-to-r from-teal-600 via-cyan-600 to-blue-600 text-white rounded-full font-semibold shadow-xl hover:shadow-2xl transition-all min-h-[52px] touch-manipulation text-base sm:text-lg"
               >
                 Confirm Booking
               </motion.button>

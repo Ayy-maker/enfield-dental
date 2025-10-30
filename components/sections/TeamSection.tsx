@@ -41,7 +41,7 @@ const team = [
 
 export function TeamSection() {
   return (
-    <section id="team" className="py-24 bg-white">
+    <section id="team" className="py-16 sm:py-20 lg:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -58,16 +58,16 @@ export function TeamSection() {
           >
             Our Team
           </motion.span>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             Meet Our Expert Dentists
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Our experienced team of dental professionals is dedicated to providing you with the highest quality care
           </p>
         </motion.div>
 
         {/* Team Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {team.map((member, index) => (
             <motion.div
               key={member.name}
@@ -76,10 +76,10 @@ export function TeamSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ y: -10 }}
-              className="group bg-gradient-to-br from-gray-50 to-blue-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
+              className="group bg-gradient-to-br from-gray-50 to-blue-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 touch-manipulation"
             >
               {/* Avatar */}
-              <div className={`relative h-64 bg-gradient-to-br ${member.gradientFrom} ${member.gradientTo} flex items-center justify-center overflow-hidden`}>
+              <div className={`relative h-48 sm:h-56 md:h-64 bg-gradient-to-br ${member.gradientFrom} ${member.gradientTo} flex items-center justify-center overflow-hidden`}>
                 <div className="text-9xl transform group-hover:scale-110 transition-transform duration-300">
                   {member.avatarEmoji}
                 </div>
@@ -87,9 +87,9 @@ export function TeamSection() {
               </div>
 
               {/* Content */}
-              <div className="p-6 space-y-4">
+              <div className="p-5 sm:p-6 space-y-3 sm:space-y-4">
                 <div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-1">
+                  <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-1">
                     {member.name}
                   </h3>
                   <p className="text-teal-600 font-semibold">{member.role}</p>

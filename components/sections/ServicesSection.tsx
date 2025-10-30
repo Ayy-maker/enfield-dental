@@ -44,7 +44,7 @@ const services = [
 
 export function ServicesSection() {
   return (
-    <section id="services" className="py-20 sm:py-32 bg-white">
+    <section id="services" className="py-16 sm:py-24 lg:py-32 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -60,18 +60,18 @@ export function ServicesSection() {
               Services
             </span>
           </div>
-          <h2 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-[0.95] tracking-tight">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-[0.95] tracking-tight">
             Premium dental
             <br />
             <span className="text-gray-400">care services</span>
           </h2>
-          <p className="text-lg sm:text-xl text-gray-600 max-w-2xl">
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl leading-relaxed">
             From routine check-ups to advanced treatments, experience excellence in every visit
           </p>
         </motion.div>
 
         {/* Services Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 lg:gap-6">
           {services.map((service, index) => (
             <motion.div
               key={service.title}
@@ -83,15 +83,15 @@ export function ServicesSection() {
                 delay: index * 0.1,
                 ease: [0.25, 0.46, 0.45, 0.94]
               }}
-              className="group relative bg-white rounded-2xl p-6 sm:p-8 border border-gray-100 hover:border-gray-200 card-hover cursor-pointer"
+              className="group relative bg-white rounded-2xl p-6 sm:p-7 lg:p-8 border border-gray-100 hover:border-gray-200 card-hover cursor-pointer touch-manipulation"
             >
               {/* Icon */}
-              <div className={`inline-flex p-3 sm:p-4 rounded-xl bg-gradient-to-r ${service.gradient} mb-4 sm:mb-6 scale-hover`}>
-                <service.icon className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
+              <div className={`inline-flex p-3 sm:p-4 rounded-xl bg-gradient-to-r ${service.gradient} mb-4 sm:mb-5 lg:mb-6 scale-hover`}>
+                <service.icon className="w-6 h-6 sm:w-7 lg:w-8 sm:h-7 lg:h-8 text-white" />
               </div>
 
               {/* Content */}
-              <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3 group-hover:text-black transition-colors">
+              <h3 className="text-base sm:text-lg lg:text-xl font-bold text-gray-900 mb-2 sm:mb-3 group-hover:text-black transition-colors">
                 {service.title}
               </h3>
               <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
@@ -109,13 +109,13 @@ export function ServicesSection() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mt-16"
+          className="text-center mt-12 sm:mt-16"
         >
           <motion.a
             href="#booking"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-teal-600 via-cyan-600 to-blue-600 text-white rounded-full font-semibold shadow-xl hover:shadow-2xl transition-all"
+            className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-teal-600 via-cyan-600 to-blue-600 text-white rounded-full font-semibold shadow-xl hover:shadow-2xl transition-all min-h-[48px] touch-manipulation text-sm sm:text-base"
           >
             Book Your Appointment
           </motion.a>
