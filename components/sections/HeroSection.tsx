@@ -120,8 +120,9 @@ export function HeroSection() {
             <div className="relative h-[400px] sm:h-[500px] md:h-[600px] lg:h-[700px] rounded-2xl sm:rounded-3xl overflow-hidden group shadow-2xl">
               <motion.img 
                 src="/enfield-dental/images/team-photo-full.jpg" 
-                alt="Enfield Medical and Dental Team" 
-                className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out"
+                alt="Enfield Medical and Dental Team - Your trusted family dentists with over 30 years of experience" 
+                className="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-700 ease-out"
+                loading="eager"
                 initial={{ scale: 1.1 }}
                 animate={{ scale: 1 }}
                 transition={{ duration: 1.2 }}

@@ -73,7 +73,7 @@ export function AboutSection() {
             </motion.a>
           </motion.div>
 
-          {/* Right Column - Visual */}
+          {/* Right Column - Office Photos */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -81,47 +81,85 @@ export function AboutSection() {
             transition={{ duration: 0.6 }}
             className="relative"
           >
-            {/* Main Card */}
-            <div className="relative bg-white rounded-3xl p-8 shadow-2xl">
-              <div className="space-y-6">
-                <div className="flex items-center justify-between p-6 bg-gradient-to-r from-teal-500 to-cyan-500 rounded-2xl text-white">
-                  <div>
-                    <div className="text-3xl font-bold">30+</div>
-                    <div className="text-blue-100">Years Experience</div>
-                  </div>
-                  <Award className="w-12 h-12 opacity-80" />
+            {/* Office Photos Grid */}
+            <div className="grid gap-4 sm:gap-6">
+              {/* Large Office Photo */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+                className="relative h-[300px] sm:h-[350px] md:h-[400px] rounded-2xl sm:rounded-3xl overflow-hidden group shadow-xl hover:shadow-2xl transition-shadow"
+              >
+                <img
+                  src="/enfield-dental/images/office-1.jpg"
+                  alt="Modern Enfield Medical and Dental clinic interior with state-of-the-art facilities"
+                  className="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-700"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute bottom-4 left-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <p className="font-semibold text-sm sm:text-base">Modern Clinic Interior</p>
+                  <p className="text-xs sm:text-sm text-white/90">State-of-the-art facilities</p>
                 </div>
+              </motion.div>
 
-                <div className="flex items-center justify-between p-6 bg-gradient-to-r from-green-500 to-teal-500 rounded-2xl text-white">
-                  <div>
-                    <div className="text-3xl font-bold">5000+</div>
-                    <div className="text-green-100">Happy Patients</div>
+              {/* Stats and Second Photo Row */}
+              <div className="grid sm:grid-cols-2 gap-4 sm:gap-6">
+                {/* Second Office Photo */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.3 }}
+                  className="relative h-[200px] sm:h-[250px] rounded-2xl overflow-hidden group shadow-lg hover:shadow-xl transition-shadow"
+                >
+                  <img
+                    src="/enfield-dental/images/office-2.jpg"
+                    alt="Enfield Medical and Dental treatment room with advanced dental equipment"
+                    className="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-700"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute bottom-3 left-3 right-3 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <p className="font-semibold text-xs sm:text-sm">Treatment Room</p>
+                    <p className="text-[10px] sm:text-xs text-white/90">Advanced equipment</p>
                   </div>
-                  <Heart className="w-12 h-12 opacity-80" />
-                </div>
+                </motion.div>
 
-                <div className="flex items-center justify-between p-6 bg-gradient-to-r from-orange-500 to-red-500 rounded-2xl text-white">
-                  <div>
-                    <div className="text-3xl font-bold">98%</div>
-                    <div className="text-orange-100">Satisfaction Rate</div>
+                {/* Stats Card */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.4 }}
+                  className="bg-gradient-to-br from-teal-500 via-cyan-500 to-blue-500 rounded-2xl p-6 text-white shadow-lg flex flex-col justify-center"
+                >
+                  <div className="space-y-4">
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <div className="text-3xl sm:text-4xl font-bold">30+</div>
+                        <div className="text-xs sm:text-sm text-teal-100">Years Experience</div>
+                      </div>
+                      <Award className="w-10 h-10 sm:w-12 sm:h-12 opacity-80" />
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <div className="text-3xl sm:text-4xl font-bold">5000+</div>
+                        <div className="text-xs sm:text-sm text-teal-100">Happy Patients</div>
+                      </div>
+                      <Heart className="w-10 h-10 sm:w-12 sm:h-12 opacity-80" />
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <div className="text-3xl sm:text-4xl font-bold">⭐ 4.9</div>
+                        <div className="text-xs sm:text-sm text-teal-100">Rating</div>
+                      </div>
+                    </div>
                   </div>
-                  <Users className="w-12 h-12 opacity-80" />
-                </div>
+                </motion.div>
               </div>
             </div>
-
-            {/* Floating Element */}
-            <motion.div
-              animate={{
-                y: [0, -20, 0],
-                rotate: [0, 5, 0],
-              }}
-              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -top-8 -right-8 bg-gradient-to-r from-yellow-400 to-orange-400 text-white p-6 rounded-2xl shadow-2xl"
-            >
-              <div className="text-3xl font-bold">⭐ 4.9</div>
-              <div className="text-sm text-yellow-100">Rating</div>
-            </motion.div>
           </motion.div>
         </div>
       </div>
