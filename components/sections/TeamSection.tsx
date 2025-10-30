@@ -11,7 +11,16 @@ const team = [
     experience: "25+ years",
     education: "BDS, University of Sydney",
     bio: "Specialized in creating beautiful smiles with a gentle approach to patient care.",
-    avatarEmoji: "👩‍⚕️",
+    avatar: (
+      <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+        <circle cx="100" cy="100" r="100" fill="currentColor" fillOpacity="0.1"/>
+        <circle cx="100" cy="70" r="30" fill="currentColor" fillOpacity="0.3"/>
+        <path d="M50 140c0-27.614 22.386-50 50-50s50 22.386 50 50" fill="currentColor" fillOpacity="0.3"/>
+        <circle cx="85" cy="65" r="4" fill="currentColor"/>
+        <circle cx="115" cy="65" r="4" fill="currentColor"/>
+        <path d="M90 80c0 5.523 4.477 10 10 10s10-4.477 10-10" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+      </svg>
+    ),
     gradientFrom: "from-rose-400",
     gradientTo: "to-pink-500",
   },
@@ -22,7 +31,17 @@ const team = [
     experience: "15+ years",
     education: "BDS, MDent (Ortho)",
     bio: "Expert in Invisalign and modern orthodontic treatments for all ages.",
-    avatarEmoji: "👨‍⚕️",
+    avatar: (
+      <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+        <circle cx="100" cy="100" r="100" fill="currentColor" fillOpacity="0.1"/>
+        <circle cx="100" cy="70" r="30" fill="currentColor" fillOpacity="0.3"/>
+        <path d="M50 140c0-27.614 22.386-50 50-50s50 22.386 50 50" fill="currentColor" fillOpacity="0.3"/>
+        <circle cx="85" cy="65" r="4" fill="currentColor"/>
+        <circle cx="115" cy="65" r="4" fill="currentColor"/>
+        <path d="M90 80c0 5.523 4.477 10 10 10s10-4.477 10-10" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+        <rect x="70" y="50" width="60" height="8" rx="4" fill="currentColor" fillOpacity="0.2"/>
+      </svg>
+    ),
     gradientFrom: "from-blue-400",
     gradientTo: "to-cyan-500",
   },
@@ -33,7 +52,17 @@ const team = [
     experience: "12+ years",
     education: "BDS, DClinDent (Perio)",
     bio: "Pioneer in laser dentistry with advanced pain management techniques.",
-    avatarEmoji: "👩‍⚕️",
+    avatar: (
+      <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+        <circle cx="100" cy="100" r="100" fill="currentColor" fillOpacity="0.1"/>
+        <circle cx="100" cy="70" r="30" fill="currentColor" fillOpacity="0.3"/>
+        <path d="M50 140c0-27.614 22.386-50 50-50s50 22.386 50 50" fill="currentColor" fillOpacity="0.3"/>
+        <circle cx="85" cy="65" r="4" fill="currentColor"/>
+        <circle cx="115" cy="65" r="4" fill="currentColor"/>
+        <path d="M90 80c0 5.523 4.477 10 10 10s10-4.477 10-10" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+        <path d="M80 55c10-5 30-5 40 0" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+      </svg>
+    ),
     gradientFrom: "from-teal-400",
     gradientTo: "to-emerald-500",
   },
@@ -80,10 +109,16 @@ export function TeamSection() {
             >
               {/* Avatar */}
               <div className={`relative h-48 sm:h-56 md:h-64 bg-gradient-to-br ${member.gradientFrom} ${member.gradientTo} flex items-center justify-center overflow-hidden`}>
-                <div className="text-9xl transform group-hover:scale-110 transition-transform duration-300">
-                  {member.avatarEmoji}
+                <div className="w-40 h-40 sm:w-48 sm:h-48 text-white transform group-hover:scale-110 transition-transform duration-300">
+                  {member.avatar}
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                {/* Medical Cross Badge */}
+                <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full p-2 shadow-lg">
+                  <svg className="w-6 h-6 text-teal-600" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2v20M2 12h20" stroke="currentColor" strokeWidth="3" strokeLinecap="round"/>
+                  </svg>
+                </div>
               </div>
 
               {/* Content */}
