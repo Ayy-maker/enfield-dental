@@ -89,12 +89,12 @@ export function HeroSection() {
                   {clicks.map((click) => (
                     <motion.span
                       key={click.id}
-                      initial={{ scale: 0, opacity: 1 }}
-                      animate={{ scale: 3, opacity: 0 }}
+                      initial={{ scale: 0, opacity: 0.8 }}
+                      animate={{ scale: 8, opacity: 0 }}
                       exit={{ opacity: 0 }}
-                      transition={{ duration: 0.6, ease: "easeOut" }}
-                      className="absolute inset-0 rounded-full bg-white"
-                      style={{ left: click.x, top: click.y, width: 20, height: 20 }}
+                      transition={{ duration: 1, ease: "easeOut" }}
+                      className="absolute rounded-full bg-white pointer-events-none z-40"
+                      style={{ left: click.x - 25, top: click.y - 25, width: 50, height: 50 }}
                     />
                   ))}
                 </AnimatePresence>
@@ -104,27 +104,27 @@ export function HeroSection() {
                   <>
                     <motion.div
                       initial={{ y: 0, x: 0, opacity: 1, scale: 0 }}
-                      animate={{ y: -40, x: -20, opacity: 0, scale: 1 }}
-                      transition={{ duration: 0.8, ease: "easeOut" }}
-                      className="absolute"
+                      animate={{ y: -60, x: -30, opacity: 0, scale: 1.5 }}
+                      transition={{ duration: 1.2, ease: "easeOut" }}
+                      className="absolute z-50"
                     >
-                      <Star className="w-5 h-5 text-yellow-400 fill-yellow-400" />
+                      <Star className="w-8 h-8 text-yellow-400 fill-yellow-400 drop-shadow-lg" />
                     </motion.div>
                     <motion.div
                       initial={{ y: 0, x: 0, opacity: 1, scale: 0 }}
-                      animate={{ y: -50, x: 10, opacity: 0, scale: 1 }}
-                      transition={{ duration: 0.9, ease: "easeOut" }}
-                      className="absolute"
+                      animate={{ y: -70, x: 20, opacity: 0, scale: 1.5 }}
+                      transition={{ duration: 1.3, ease: "easeOut" }}
+                      className="absolute z-50"
                     >
-                      <Smile className="w-5 h-5 text-teal-400" />
+                      <Smile className="w-8 h-8 text-teal-400 drop-shadow-lg" />
                     </motion.div>
                     <motion.div
                       initial={{ y: 0, x: 0, opacity: 1, scale: 0 }}
-                      animate={{ y: -45, x: 30, opacity: 0, scale: 1 }}
-                      transition={{ duration: 0.85, ease: "easeOut" }}
-                      className="absolute"
+                      animate={{ y: -65, x: 40, opacity: 0, scale: 1.5 }}
+                      transition={{ duration: 1.25, ease: "easeOut" }}
+                      className="absolute z-50"
                     >
-                      <Sparkles className="w-4 h-4 text-cyan-400" />
+                      <Sparkles className="w-7 h-7 text-cyan-400 drop-shadow-lg" />
                     </motion.div>
                   </>
                 )}
@@ -145,12 +145,12 @@ export function HeroSection() {
                   {clicks.map((click) => (
                     <motion.span
                       key={click.id}
-                      initial={{ scale: 0, opacity: 0.5 }}
-                      animate={{ scale: 3, opacity: 0 }}
+                      initial={{ scale: 0, opacity: 0.7 }}
+                      animate={{ scale: 8, opacity: 0 }}
                       exit={{ opacity: 0 }}
-                      transition={{ duration: 0.6, ease: "easeOut" }}
-                      className="absolute inset-0 rounded-full bg-teal-500"
-                      style={{ left: click.x, top: click.y, width: 20, height: 20 }}
+                      transition={{ duration: 1, ease: "easeOut" }}
+                      className="absolute rounded-full bg-teal-500 pointer-events-none z-40"
+                      style={{ left: click.x - 25, top: click.y - 25, width: 50, height: 50 }}
                     />
                   ))}
                 </AnimatePresence>
@@ -160,27 +160,27 @@ export function HeroSection() {
                   <>
                     <motion.div
                       initial={{ y: 0, rotate: 0, opacity: 1, scale: 0 }}
-                      animate={{ y: -40, rotate: 360, opacity: 0, scale: 1 }}
-                      transition={{ duration: 0.8, ease: "easeOut" }}
-                      className="absolute"
+                      animate={{ y: -60, rotate: 360, opacity: 0, scale: 1.5 }}
+                      transition={{ duration: 1.2, ease: "easeOut" }}
+                      className="absolute z-50"
                     >
-                      <Heart className="w-5 h-5 text-red-500 fill-red-500" />
+                      <Heart className="w-8 h-8 text-red-500 fill-red-500 drop-shadow-lg" />
                     </motion.div>
                     <motion.div
                       initial={{ y: 0, x: 0, opacity: 1, scale: 0 }}
-                      animate={{ y: -50, x: -20, opacity: 0, scale: 1 }}
-                      transition={{ duration: 0.9, ease: "easeOut" }}
-                      className="absolute"
+                      animate={{ y: -70, x: -30, opacity: 0, scale: 1.5 }}
+                      transition={{ duration: 1.3, ease: "easeOut" }}
+                      className="absolute z-50"
                     >
-                      <Phone className="w-5 h-5 text-teal-600" />
+                      <Phone className="w-8 h-8 text-teal-600 drop-shadow-lg" />
                     </motion.div>
                     <motion.div
                       initial={{ y: 0, x: 0, opacity: 1, scale: 0 }}
-                      animate={{ y: -45, x: 20, opacity: 0, scale: 1 }}
-                      transition={{ duration: 0.85, ease: "easeOut" }}
-                      className="absolute"
+                      animate={{ y: -65, x: 30, opacity: 0, scale: 1.5 }}
+                      transition={{ duration: 1.25, ease: "easeOut" }}
+                      className="absolute z-50"
                     >
-                      <Sparkles className="w-4 h-4 text-blue-400" />
+                      <Sparkles className="w-7 h-7 text-blue-400 drop-shadow-lg" />
                     </motion.div>
                   </>
                 )}
