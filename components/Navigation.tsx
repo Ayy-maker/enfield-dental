@@ -56,7 +56,7 @@ export function Navigation() {
               </a>
             ))}
             <a
-              href="#booking"
+              href="#contact"
               className="ml-4 px-6 xl:px-8 py-3 bg-gradient-to-r from-teal-600 to-cyan-600 text-white rounded-full text-sm xl:text-base font-medium hover:shadow-lg transition-shadow"
             >
               Book appointment
@@ -89,7 +89,7 @@ export function Navigation() {
               </a>
             ))}
             <a
-              href="#booking"
+              href="#contact"
               onClick={() => setMobileMenuOpen(false)}
               className="block w-full text-center px-6 py-4 mt-4 bg-gradient-to-r from-teal-600 via-cyan-600 to-blue-600 text-white rounded-full font-medium shadow-lg min-h-[48px]"
             >

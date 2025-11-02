@@ -9,6 +9,7 @@ export function HeroSection() {
   const [buttonClicked, setButtonClicked] = useState<string | null>(null);
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, buttonId: string) => {
+    // Don't prevent default - allow navigation to happen
     const rect = e.currentTarget.getBoundingClientRect();
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
@@ -75,7 +76,7 @@ export function HeroSection() {
               className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4"
             >
               <motion.a
-                href="#booking"
+                href="#contact"
                 onClick={(e) => handleClick(e, 'booking')}
                 whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
                 whileTap={{ scale: 0.95 }}
