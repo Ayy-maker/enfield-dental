@@ -41,10 +41,7 @@ export function Navigation() {
   ];
 
   return (
-    <motion.nav
-      initial={{ y: -100, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+    <nav
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         isScrolled
@@ -55,91 +52,60 @@ export function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-          >
-            <Link href="/" className="flex items-center group">
-              <motion.span 
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.2 }}
-                className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900"
-              >
-                Enfield Medical & Dental
-              </motion.span>
-            </Link>
-          </motion.div>
+          <Link href="/" className="flex items-center group">
+            <span className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 transition-transform hover:scale-105">
+              Enfield Medical & Dental
+            </span>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-6 xl:space-x-8">
-            {navItems.map((item, index) => {
+            {navItems.map((item) => {
               const isActive = activeSection === item.href.replace('#', '');
               return (
-                <motion.div
+                <Link
                   key={item.href}
-                  initial={{ opacity: 0, y: -20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.1 * index, ease: [0.22, 1, 0.36, 1] }}
-                  className="relative"
+                  href={item.href}
+                  className="relative px-3 py-2 text-sm xl:text-base font-medium transition-colors group"
                 >
-                  <Link
-                    href={item.href}
-                    className="text-sm xl:text-base font-medium relative group"
+                  <span
+                    className={cn(
+                      "relative z-10 transition-colors duration-200",
+                      isActive ? "text-white" : "text-gray-600 group-hover:text-white"
+                    )}
                   >
-                    <motion.span
-                      className={cn(
-                        "relative z-10 transition-colors",
-                        isActive ? "text-white" : "text-gray-600 group-hover:text-white"
-                      )}
-                    >
-                      {item.label}
-                    </motion.span>
-                    {/* Animated pill background */}
-                    <motion.span
-                      className="absolute inset-0 -inset-x-3 -inset-y-2 bg-gradient-to-r from-teal-600 to-cyan-600 rounded-full -z-0"
-                      initial={false}
-                      animate={{
-                        opacity: isActive ? 1 : 0,
-                        scale: isActive ? 1 : 0.8,
-                      }}
-                      whileHover={{
-                        opacity: 1,
-                        scale: 1,
-                      }}
-                      transition={{ duration: 0.2, ease: "easeOut" }}
-                    />
-                  </Link>
-                </motion.div>
+                    {item.label}
+                  </span>
+                  {/* Animated pill background */}
+                  <span
+                    className={cn(
+                      "absolute inset-0 bg-gradient-to-r from-teal-600 to-cyan-600 rounded-full transition-all duration-200 ease-out",
+                      isActive 
+                        ? "opacity-100 scale-100" 
+                        : "opacity-0 scale-90 group-hover:opacity-100 group-hover:scale-100"
+                    )}
+                  />
+                </Link>
               );
             })}
             <motion.a
               href="#booking"
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
-              whileHover={{ scale: 1.05, boxShadow: "0 10px 25px rgba(0,0,0,0.15)" }}
+              whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-6 xl:px-8 py-3 bg-gradient-to-r from-teal-600 to-cyan-600 text-white rounded-full text-sm xl:text-base font-medium shadow-md transition-all"
+              className="px-6 xl:px-8 py-3 bg-gradient-to-r from-teal-600 to-cyan-600 text-white rounded-full text-sm xl:text-base font-medium shadow-md hover:shadow-lg transition-shadow"
             >
               Book appointment
             </motion.a>
           </div>
 
           {/* Mobile Menu Button - Enhanced touch target */}
-          <motion.button
+          <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            whileTap={{ scale: 0.9, rotate: 90 }}
-            className="lg:hidden p-3 rounded-lg hover:bg-gray-100 active:bg-gray-200 transition-colors touch-manipulation min-w-[44px] min-h-[44px] flex items-center justify-center"
+            className="lg:hidden p-3 rounded-lg hover:bg-gray-100 active:bg-gray-200 active:scale-95 transition-all touch-manipulation min-w-[44px] min-h-[44px] flex items-center justify-center"
             aria-label="Toggle menu"
           >
-            <motion.div
-              animate={{ rotate: mobileMenuOpen ? 180 : 0 }}
-              transition={{ duration: 0.3 }}
-            >
-              {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-            </motion.div>
-          </motion.button>
+            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
         </div>
       </div>
 
@@ -147,60 +113,43 @@ export function Navigation() {
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+            initial={{ height: 0 }}
+            animate={{ height: "auto" }}
+            exit={{ height: 0 }}
+            transition={{ duration: 0.2 }}
             className="lg:hidden bg-white border-t shadow-lg overflow-hidden"
           >
             <div className="px-4 sm:px-6 py-6 space-y-2">
-              {navItems.map((item, index) => {
+              {navItems.map((item) => {
                 const isActive = activeSection === item.href.replace('#', '');
                 return (
-                  <motion.div
+                  <Link
                     key={item.href}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -20 }}
-                    transition={{ duration: 0.3, delay: index * 0.05, ease: [0.22, 1, 0.36, 1] }}
+                    href={item.href}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className={cn(
+                      "block font-medium py-3 px-4 rounded-lg min-h-[44px] touch-manipulation transition-all",
+                      isActive 
+                        ? "text-white bg-gradient-to-r from-teal-600 to-cyan-600" 
+                        : "text-gray-700 hover:text-white hover:bg-gradient-to-r hover:from-teal-600 hover:to-cyan-600 active:scale-95"
+                    )}
                   >
-                    <Link
-                      href={item.href}
-                      onClick={() => setMobileMenuOpen(false)}
-                      className={cn(
-                        "block font-medium py-3 px-4 rounded-lg min-h-[44px] touch-manipulation transition-all relative overflow-hidden group",
-                        isActive 
-                          ? "text-teal-600 bg-teal-50" 
-                          : "text-gray-700 hover:text-teal-600 hover:bg-teal-50 active:bg-teal-100"
-                      )}
-                    >
-                      <motion.span
-                        className="absolute inset-0 bg-gradient-to-r from-teal-500/10 to-cyan-500/10 opacity-0 group-hover:opacity-100 transition-opacity"
-                      />
-                      <span className="relative">{item.label}</span>
-                    </Link>
-                  </motion.div>
+                    {item.label}
+                  </Link>
                 );
               })}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: 20 }}
-                transition={{ duration: 0.4, delay: navItems.length * 0.05 }}
+              <motion.a
+                href="#booking"
+                onClick={() => setMobileMenuOpen(false)}
+                whileTap={{ scale: 0.95 }}
+                className="block w-full text-center px-6 py-4 mt-4 bg-gradient-to-r from-teal-600 via-cyan-600 to-blue-600 text-white rounded-full font-medium shadow-lg hover:shadow-xl active:shadow-md transition-all min-h-[48px] touch-manipulation"
               >
-                <motion.a
-                  href="#booking"
-                  onClick={() => setMobileMenuOpen(false)}
-                  whileTap={{ scale: 0.95 }}
-                  className="block w-full text-center px-6 py-4 mt-4 bg-gradient-to-r from-teal-600 via-cyan-600 to-blue-600 text-white rounded-full font-medium shadow-lg hover:shadow-xl active:shadow-md transition-all min-h-[48px] touch-manipulation"
-                >
-                  Book Now
-                </motion.a>
-              </motion.div>
+                Book Now
+              </motion.a>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
-    </motion.nav>
+    </nav>
   );
 }
