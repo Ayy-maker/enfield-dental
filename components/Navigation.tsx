@@ -85,19 +85,29 @@ export function Navigation() {
                 >
                   <Link
                     href={item.href}
-                    className={cn(
-                      "text-sm xl:text-base font-medium transition-colors relative group",
-                      isActive ? "text-teal-600" : "text-gray-600 hover:text-gray-900"
-                    )}
+                    className="text-sm xl:text-base font-medium relative group"
                   >
-                    {item.label}
-                    {/* Animated underline */}
                     <motion.span
                       className={cn(
-                        "absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-teal-600 to-cyan-600",
-                        isActive ? "w-full" : "w-0 group-hover:w-full"
+                        "relative z-10 transition-colors",
+                        isActive ? "text-white" : "text-gray-600 group-hover:text-white"
                       )}
-                      transition={{ duration: 0.3, ease: "easeOut" }}
+                    >
+                      {item.label}
+                    </motion.span>
+                    {/* Animated pill background */}
+                    <motion.span
+                      className="absolute inset-0 -inset-x-3 -inset-y-2 bg-gradient-to-r from-teal-600 to-cyan-600 rounded-full -z-0"
+                      initial={false}
+                      animate={{
+                        opacity: isActive ? 1 : 0,
+                        scale: isActive ? 1 : 0.8,
+                      }}
+                      whileHover={{
+                        opacity: 1,
+                        scale: 1,
+                      }}
+                      transition={{ duration: 0.2, ease: "easeOut" }}
                     />
                   </Link>
                 </motion.div>
