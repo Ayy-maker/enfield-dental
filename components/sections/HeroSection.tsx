@@ -12,13 +12,13 @@ export function HeroSection() {
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             className="lg:col-span-6 space-y-8"
           >
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
+              transition={{ delay: 0.2, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
               className="inline-block"
             >
               <div className="flex items-center space-x-2 px-3 py-1 bg-black text-white text-xs font-medium rounded-full">
@@ -28,9 +28,9 @@ export function HeroSection() {
             </motion.div>
 
             <motion.h1
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
+              transition={{ delay: 0.3, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
               className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-gray-900 leading-[0.9] tracking-tight"
             >
               Discover
@@ -43,7 +43,7 @@ export function HeroSection() {
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4 }}
+              transition={{ delay: 0.5, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
               className="text-base sm:text-lg md:text-xl text-gray-600 max-w-lg leading-relaxed"
             >
               Your trusted dental practice for premium care, offering personalized service and cutting-edge treatments.
@@ -52,13 +52,13 @@ export function HeroSection() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5 }}
+              transition={{ delay: 0.6, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
               className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4"
             >
               <motion.a
                 href="#booking"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
+                whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
+                whileTap={{ scale: 0.95 }}
                 className="group px-6 sm:px-8 py-4 bg-black text-white rounded-full font-medium flex items-center justify-center space-x-2 hover:bg-gray-900 transition-all glow-hover overflow-hidden min-h-[48px] touch-manipulation shadow-md hover:shadow-lg text-sm sm:text-base"
               >
                 <span>Book appointment</span>
@@ -67,8 +67,8 @@ export function HeroSection() {
 
               <motion.a
                 href="tel:+61297474777"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
+                whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
+                whileTap={{ scale: 0.95 }}
                 className="px-6 sm:px-8 py-4 bg-white text-gray-900 rounded-full font-medium border-2 border-gray-200 hover:border-black transition-all flex items-center justify-center space-x-2 smooth-hover min-h-[48px] touch-manipulation shadow-sm hover:shadow-md text-sm sm:text-base"
               >
                 <Phone className="w-4 h-4" />
@@ -80,7 +80,7 @@ export function HeroSection() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6, duration: 0.7 }}
+              transition={{ delay: 0.7, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
               className="grid grid-cols-3 gap-4 sm:gap-6 md:gap-8 pt-8 max-w-lg"
             >
               <motion.div
@@ -112,9 +112,9 @@ export function HeroSection() {
 
           {/* Right Column - Large Image */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.96 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, delay: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
+            initial={{ opacity: 0, scale: 0.95, y: 30 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
             className="lg:col-span-6 relative mt-8 lg:mt-0"
           >
             <div className="relative h-[400px] sm:h-[500px] md:h-[600px] lg:h-[700px] rounded-2xl sm:rounded-3xl overflow-hidden group shadow-2xl">
@@ -123,9 +123,9 @@ export function HeroSection() {
                 alt="Enfield Medical and Dental Team - Your trusted family dentists with over 30 years of experience" 
                 className="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-700 ease-out"
                 loading="eager"
-                initial={{ scale: 1.1 }}
+                initial={{ scale: 1.15 }}
                 animate={{ scale: 1 }}
-                transition={{ duration: 1.2 }}
+                transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
               />
               {/* Overlay badge */}
               <motion.div 
