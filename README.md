@@ -153,17 +153,6 @@ colors: {
 - **Tablet:** 640px - 1024px
 - **Desktop:** > 1024px
 
-## 🔮 Future Enhancements
-
-- [ ] Real-time booking calendar with availability
-- [ ] Patient portal with login
-- [ ] Online payment integration
-- [ ] Blog section for dental tips
-- [ ] Multi-language support (English/Chinese)
-- [ ] Live chat support
-- [ ] Integration with practice management software
-- [ ] SMS reminders for appointments
-
 ## 📄 License
 
 This project is licensed under the MIT License.
